@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Evangelist Pvt. Ltd. — ISO 9001:2015 Certified IT System Integrator | techeva.in</title>
+<meta name="description" content="Tech Evangelist Pvt. Ltd. is an ISO 9001:2015 certified IT System Integrator with 10+ years of experience delivering CCTV, IT infrastructure, smart classroom, printing, and system integration across India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4a4a6a;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+:root {
+  --primary: #1a3c6e;
+  --primary-dark: #142e54;
+  --accent: #2eb872;
+  --accent-light: #eaf8f0;
+  --heading: #1a1a2e;
+  --body: #4a4a6a;
+  --muted: #6c757d;
+  --bg-white: #ffffff;
+  --bg-gray: #f7f8fa;
+  --bg-blue-tint: #eef3fb;
+  --border: #e2e8f0;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(26,60,110,0.08);
+  --shadow-lg: 0 10px 30px rgba(26,60,110,0.12);
+  --radius: 12px;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--primary); text-decoration: none; transition: all 0.2s ease; }
+a:hover { color: var(--accent); }
+h1, h2, h3, h4, h5 { color: var(--heading); font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); }
+h3 { font-size: 1.25rem; }
+p { color: var(--body); }
+ul { list-style: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* ===== LAYOUT ===== */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+section { padding: 80px 0; }
+.section-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+.section-head .eyebrow {
+  display: inline-block; color: var(--accent); font-weight: 600; font-size: 0.875rem;
+  text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;
+}
+.section-head h2 { margin-bottom: 16px; }
+.section-head p { font-size: 1.0625rem; color: var(--muted); }
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px; border-radius: 8px;
+  font-weight: 600; font-size: 0.9375rem;
+  transition: all 0.25s ease; cursor: pointer;
+  border: 1.5px solid transparent; line-height: 1;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #279c61; color: #fff; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-secondary { background: var(--primary); color: #fff; }
+.btn-secondary:hover { background: var(--primary-dark); color: #fff; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-outline { background: transparent; color: var(--accent); border-color: var(--accent); }
+.btn-outline:hover { background: var(--accent); color: #fff; }
+.btn-ghost { background: transparent; color: var(--primary); border-color: var(--primary); }
+.btn-ghost:hover { background: var(--primary); color: #fff; }
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: #ffffff; border-bottom: 1px solid var(--border);
+  transition: all 0.25s ease;
+}
+.navbar.scrolled { box-shadow: var(--shadow-sm); }
+.navbar.scrolled .nav-inner { padding: 10px 24px; }
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 16px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: padding 0.25s ease;
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-logo {
+  width: 44px; height: 44px; border-radius: 8px;
+  background: #fff; border: 1.5px solid var(--primary);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--primary); font-weight: 800; font-size: 1.125rem;
+  position: relative;
+}
+.brand-logo::before {
+  content: ""; position: absolute; left: 4px; top: 50%; transform: translateY(-50%);
+  width: 8px; height: 16px; background: #2eb872; border-radius: 2px;
+}
+.brand-logo span { margin-left: 8px; }
+.brand-text { line-height: 1.1; }
+.brand-text .name { font-size: 1.125rem; font-weight: 700; color: var(--primary); }
+.brand-text .sub { font-size: 0.7rem; color: var(--muted); font-weight: 500; }
+
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links a {
+  padding: 10px 14px; border-radius: 6px;
+  color: var(--heading); font-weight: 500; font-size: 0.9375rem;
+  position: relative;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--primary); background: var(--bg-gray); }
+.nav-cta { margin-left: 12px; padding: 10px 20px !important; background: var(--accent) !important; color: #fff !important; }
+.nav-cta:hover { background: #279c61 !important; color: #fff !important; }
+
+.dropdown { position: relative; }
+.dropdown-toggle { display: inline-flex; align-items: center; gap: 4px; }
+.dropdown-menu {
+  position: absolute; top: 100%; left: 0; min-width: 240px;
+  background: #fff; border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: var(--shadow-lg); padding: 8px;
+  opacity: 0; visibility: hidden; transform: translateY(10px);
+  transition: all 0.2s ease;
+}
+.dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown-menu a {
+  display: block; padding: 10px 14px; border-radius: 6px;
+  font-size: 0.9rem; color: var(--body);
+}
+.dropdown-menu a:hover { background: var(--bg-gray); color: var(--primary); }
+
+.hamburger {
+  display: none; width: 40px; height: 40px;
+  flex-direction: column; justify-content: center; align-items: center; gap: 5px;
+  background: transparent; border: 1px solid var(--border); border-radius: 8px;
+}
+.hamburger span { width: 20px; height: 2px; background: var(--heading); transition: 0.3s; }
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ===== HERO ===== */
+.hero {
+  padding: 140px 0 80px;
+  background: linear-gradient(180deg, var(--bg-blue-tint) 0%, #ffffff 100%);
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: center;
+}
+.hero h1 { font-size: clamp(2.25rem, 4vw, 3.25rem); margin-bottom: 20px; }
+.hero h1 .highlight { color: var(--accent); }
+.hero p.lead {
+  font-size: 1.125rem; color: var(--body); margin-bottom: 32px; max-width: 580px;
+}
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
+.hero-trust { display: flex; align-items: center; gap: 16px; color: var(--muted); font-size: 0.875rem; }
+.hero-trust i { color: #2eb872; font-size: 1.125rem; }
+
+.hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.stat-card {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 28px 24px; box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease; position: relative; overflow: hidden;
+}
+.stat-card::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--accent);
+}
+.stat-card:nth-child(even)::before { background: var(--primary); }
+.stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.stat-card .num { font-size: 1.875rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.stat-card .label { font-size: 0.875rem; color: var(--muted); font-weight: 500; }
+.stat-card i { font-size: 1.5rem; color: var(--accent); margin-bottom: 8px; display: block; }
+
+/* ===== TRUST BAR ===== */
+.trust-bar { background: var(--bg-gray); padding: 32px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.trust-inner { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; justify-content: center; }
+.trust-label { font-weight: 600; color: var(--heading); font-size: 0.9375rem; }
+.trust-logos { display: flex; flex-wrap: wrap; gap: 12px; }
+.brand-pill {
+  padding: 8px 18px; background: #fff; border: 1.5px solid var(--border); border-radius: 999px;
+  font-weight: 600; font-size: 0.875rem; color: var(--heading);
+  transition: all 0.2s ease;
+}
+.brand-pill:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+.brand-pill.cisco { color: #1ba0d7; border-color: #1ba0d7; }
+.brand-pill.lenovo { color: #2eb872; border-color: #2eb872; }
+.brand-pill.hp { color: #0096d6; border-color: #0096d6; }
+.brand-pill.dlink { color: #00529b; border-color: #00529b; }
+.brand-pill.bosch { color: #2eb872; border-color: #2eb872; }
+.brand-pill.brother { color: #003595; border-color: #003595; }
+.brand-pill.xerox { color: #2eb872; border-color: #2eb872; }
+.brand-pill.ricoh { color: #2eb872; border-color: #2eb872; }
+.brand-pill.samsung { color: #1428a0; border-color: #1428a0; }
+.brand-pill.lexmark { color: #2eb872; border-color: #2eb872; }
+
+/* ===== ABOUT (HOME) ===== */
+.about-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+.about-grid h2 { margin-bottom: 16px; }
+.about-grid p { margin-bottom: 16px; font-size: 1.0625rem; }
+.about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.feature-card {
+  padding: 24px; background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+  transition: all 0.25s ease;
+}
+.feature-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.feature-card i {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--accent-light); color: var(--accent);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.375rem; margin-bottom: 14px;
+}
+.feature-card h4 { font-size: 1rem; margin-bottom: 6px; }
+.feature-card p { font-size: 0.875rem; color: var(--muted); margin: 0; }
+
+/* ===== SERVICES GRID ===== */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.service-card {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 32px 28px; transition: all 0.3s ease; position: relative;
+}
+.service-card:hover { transform: translateY(-4px); border-color: var(--primary); box-shadow: var(--shadow-md); }
+.service-icon {
+  width: 56px; height: 56px; border-radius: 12px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--bg-blue-tint); color: var(--primary);
+  font-size: 1.75rem; margin-bottom: 20px;
+}
+.service-card:nth-child(2) .service-icon { background: #e6faf3; color: #0ea968; }
+.service-card:nth-child(3) .service-icon { background: var(--accent-light); color: var(--accent); }
+.service-card:nth-child(4) .service-icon { background: #f3eafd; color: #6f42c1; }
+.service-card:nth-child(5) .service-icon { background: #eaf8f0; color: #2eb872; }
+.service-card:nth-child(6) .service-icon { background: #e6f6ff; color: #1ba0d7; }
+.service-card h3 { font-size: 1.1875rem; margin-bottom: 10px; }
+.service-card p { font-size: 0.9375rem; margin-bottom: 16px; color: var(--muted); }
+.service-card .learn-more {
+  display: inline-flex; align-items: center; gap: 4px;
+  color: var(--accent); font-weight: 600; font-size: 0.875rem;
+}
+.service-card .learn-more:hover { gap: 8px; }
+
+/* ===== STATS BAR (DARK BLUE) ===== */
+.stats-bar { background: var(--primary); color: #fff; padding: 64px 0; }
+.stats-bar .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+.stats-bar .stat .num { font-size: 2.75rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 8px; }
+.stats-bar .stat .num span { color: var(--accent); }
+.stats-bar .stat .label { color: rgba(255,255,255,0.85); font-size: 0.9375rem; font-weight: 500; }
+.stats-bar .stat { padding: 0 8px; border-right: 1px solid rgba(255,255,255,0.15); }
+.stats-bar .stat:last-child { border-right: none; }
+
+/* Continued in Part 2 */
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="brand">
+      <div class="brand-logo">TE</div>
+      <div class="brand-text">
+        <div class="name">TechEva</div>
+        <div class="sub">Pvt. Ltd. — ISO 9001:2015</div>
+      </div>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About Us</a>
+      <div class="dropdown">
+        <a href="#services" class="dropdown-toggle">Services <i class="ti ti-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="#service-cctv">CCTV &amp; Surveillance</a>
+          <a href="#service-infra">IT Infrastructure</a>
+          <a href="#service-smart">Smart Classroom Solutions</a>
+          <a href="#service-ebooks">Digital Content &amp; E-Books</a>
+          <a href="#service-print">Printing &amp; Barcode Solutions</a>
+          <a href="#service-integration">System Integration</a>
+        </div>
+      </div>
+      <a href="#projects">Projects</a>
+      <a href="#clients">Clients</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#contact" class="nav-cta">Request Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== PAGE 1: HOME ===== -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:#fff;border:1px solid var(--border);border-radius:999px;font-size:0.8125rem;font-weight:600;color:var(--primary);margin-bottom:20px;">
+          <i class="ti ti-shield-check" style="color:#0ea968;"></i> ISO 9001:2015 Certified · 10+ Years
+        </div>
+        <h1>Your Trusted <span class="highlight">IT System Integration</span> Partner</h1>
+        <p class="lead">ISO 9001:2015 certified technology solutions provider delivering enterprise-grade infrastructure, surveillance, smart education, and networking across India.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary"><i class="ti ti-file-text"></i> Request a Quote</a>
+          <a href="#services" class="btn btn-secondary"><i class="ti ti-layout-grid"></i> Our Services</a>
+          <a href="#contact" class="btn btn-ghost"><i class="ti ti-calendar"></i> Book a Demo</a>
+        </div>
+        <div class="hero-trust">
+          <i class="ti ti-circle-check-filled"></i> T2 Partner with Cisco, Lenovo, HP &amp; more
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <i class="ti ti-award"></i>
+          <div class="num"><span class="counter" data-target="10">0</span>+ Years</div>
+          <div class="label">Industry Experience</div>
+        </div>
+        <div class="stat-card">
+          <i class="ti ti-school"></i>
+          <div class="num"><span class="counter" data-target="120">0</span>+ Schools</div>
+          <div class="label">LMS &amp; ERP Implemented</div>
+        </div>
+        <div class="stat-card">
+          <i class="ti ti-certificate"></i>
+          <div class="num">ISO 9001:2015</div>
+          <div class="label">Certified Company</div>
+        </div>
+        <div class="stat-card">
+          <i class="ti ti-stars"></i>
+          <div class="num">T2 Partner</div>
+          <div class="label">Cisco, Lenovo, HP &amp; More</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-label">Authorized Technology Partner for:</div>
+      <div class="trust-logos">
+        <span class="brand-pill cisco">CISCO</span>
+        <span class="brand-pill lenovo">Lenovo</span>
+        <span class="brand-pill hp">HP</span>
+        <span class="brand-pill dlink">D-Link</span>
+        <span class="brand-pill bosch">BOSCH</span>
+        <span class="brand-pill brother">brother</span>
+        <span class="brand-pill xerox">Xerox</span>
+        <span class="brand-pill ricoh">RICOH</span>
+        <span class="brand-pill samsung">SAMSUNG</span>
+        <span class="brand-pill lexmark">Lexmark</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ABOUT HOME SHORT ===== -->
+<section style="background:#ffffff;">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="section-head" style="text-align:left;margin:0 0 24px;">
+          <div class="eyebrow">Who We Are</div>
+          <h2>End-to-End Technology Integration for Modern Enterprises</h2>
+        </div>
+        <p>Tech Evangelist Pvt. Ltd. is a professionally managed ISO 9001:2015 certified IT System Integrator with 10+ years of experience. We design, deploy, and manage end-to-end technology infrastructure across Education, Enterprise, and Government sectors.</p>
+        <p>From IP surveillance and structured cabling to interactive flat panels and managed AMC services, we deliver every layer of the technology stack with verified OEM partnerships and pan-India deployment capability.</p>
+        <a href="#about" class="btn btn-secondary" style="margin-top:8px;">Learn More About Us <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="about-features">
+        <div class="feature-card">
+          <i class="ti ti-check"></i>
+          <h4>Proven Expertise</h4>
+          <p>10+ years of large-scale IT integration experience.</p>
+        </div>
+        <div class="feature-card">
+          <i class="ti ti-certificate"></i>
+          <h4>OEM Certified</h4>
+          <p>Authorized T2 partner of 10+ leading global brands.</p>
+        </div>
+        <div class="feature-card">
+          <i class="ti ti-refresh"></i>
+          <h4>Lifecycle Services</h4>
+          <p>From design and supply to AMC and managed support.</p>
+        </div>
+        <div class="feature-card">
+          <i class="ti ti-map-pin"></i>
+          <h4>Pan-India Reach</h4>
+          <p>Nationwide deployment from metros to remote sites.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CORE SERVICES ===== -->
+<section id="services" style="background:var(--bg-gray);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>Our Technology Solutions</h2>
+      <p>A complete portfolio of IT system integration services engineered for reliability, scale, and long-term ROI.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-shield-check"></i></div>
+        <h3>CCTV &amp; Surveillance</h3>
+        <p>IP CCTV, NVR/DVR systems, video analytics, and access control for facility-wide security.</p>
+        <a href="#service-cctv" class="learn-more">Learn More <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-server"></i></div>
+        <h3>IT Infrastructure</h3>
+        <p>Servers, storage, structured networking, and data center solutions built to enterprise standards.</p>
+        <a href="#service-infra" class="learn-more">Learn More <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-school"></i></div>
+        <h3>Smart Classroom</h3>
+        <p>Interactive flat panels, LMS, ERP, language lab, and digital content for modern education.</p>
+        <a href="#service-smart" class="learn-more">Learn More <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-printer"></i></div>
+        <h3>Printing &amp; Barcode</h3>
+        <p>Thermal &amp; barcode printers, labels, ribbons, and consumables from leading OEMs.</p>
+        <a href="#service-print" class="learn-more">Learn More <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-topology-ring"></i></div>
+        <h3>System Integration</h3>
+        <p>Unified network, cloud, and enterprise deployment with comprehensive AMC coverage.</p>
+        <a href="#service-integration" class="learn-more">Learn More <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-books"></i></div>
+        <h3>Digital E-Books</h3>
+        <p>70,000+ titles from 72 publishers with multi-device, copyright-compliant access.</p>
+        <a href="#service-ebooks" class="learn-more">Learn More <i class="ti ti-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS BAR (Only dark section) ===== -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stat">
+      <div class="num"><span class="counter" data-target="10">0</span><span>+</span></div>
+      <div class="label">Years Experience</div>
+    </div>
+    <div class="stat">
+      <div class="num"><span class="counter" data-target="120">0</span><span>+</span></div>
+      <div class="label">Schools Deployed</div>
+    </div>
+    <div class="stat">
+      <div class="num"><span class="counter" data-target="70000">0</span><span>+</span></div>
+      <div class="label">E-Books Available</div>
+    </div>
+    <div class="stat">
+      <div class="num"><span class="counter" data-target="10">0</span><span>+</span></div>
+      <div class="label">OEM Partnerships</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== INDUSTRIES WE SERVE ===== -->
+<section style="background:#fff;">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Where We Deliver</div>
+      <h2>Sectors We Serve</h2>
+      <p>Vertical-specialized integration experience across India's most demanding industries.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:16px;" class="industries-row">
+      <div class="industry-card"><i class="ti ti-school"></i><span>Education</span></div>
+      <div class="industry-card"><i class="ti ti-building-skyscraper"></i><span>Enterprise</span></div>
+      <div class="industry-card"><i class="ti ti-building-bank"></i><span>Government</span></div>
+      <div class="industry-card"><i class="ti ti-shopping-bag"></i><span>Retail</span></div>
+      <div class="industry-card"><i class="ti ti-heart-rate-monitor"></i><span>Healthcare</span></div>
+      <div class="industry-card"><i class="ti ti-building-factory-2"></i><span>Manufacturing</span></div>
+      <div class="industry-card"><i class="ti ti-bed"></i><span>Hospitality</span></div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ===== INDUSTRIES ===== */
+.industry-card {
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius);
+  padding:24px 12px; text-align:center; transition:all .25s ease;
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+}
+.industry-card:hover { border-color:var(--accent); transform:translateY(-4px); box-shadow:var(--shadow-md); }
+.industry-card i { font-size:1.75rem; color:var(--primary); }
+.industry-card:hover i { color:var(--accent); }
+.industry-card span { font-weight:600; color:var(--heading); font-size:0.875rem; }
+
+/* ===== CANEXXA SUBSIDIARY SPOTLIGHT ===== */
+.canexxa-card {
+  background:#fff; border:1px solid var(--border); border-left:6px solid var(--accent);
+  border-radius:var(--radius); padding:40px 40px;
+  display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:center;
+  box-shadow:var(--shadow-md);
+}
+.canexxa-card .label-pill {
+  display:inline-flex; align-items:center; gap:6px;
+  padding:6px 14px; background:var(--accent-light); color:var(--accent);
+  border-radius:999px; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;
+  margin-bottom:14px;
+}
+.canexxa-card h2 { margin-bottom:6px; }
+.canexxa-card .subname { color:var(--accent); font-weight:700; font-size:1.0625rem; margin-bottom:16px; }
+.canexxa-card p { margin-bottom:20px; font-size:0.9375rem; }
+.canexxa-pills { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+.canexxa-pills span {
+  padding:6px 14px; background:#fff; border:1.5px solid var(--accent);
+  color:var(--accent); border-radius:999px; font-size:0.8125rem; font-weight:600;
+}
+.canexxa-visual {
+  background:linear-gradient(135deg,#eaf8f0 0%,#d8f2e3 100%);
+  border-radius:var(--radius); padding:32px; text-align:center;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; min-height:240px;
+}
+.canexxa-visual .logo {
+  width:min(220px, 100%);
+  height:auto;
+  object-fit:contain;
+}
+.canexxa-visual .ctitle { font-weight:700; color:var(--heading); font-size:1.125rem; }
+.canexxa-visual .ctag { color:var(--muted); font-size:0.875rem; }
+
+/* ===== CTA BANNER ===== */
+.cta-banner {
+  background: var(--accent-light); border:1px solid var(--accent);
+  border-radius:var(--radius); padding:48px;
+  display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;
+}
+.cta-banner h2 { margin-bottom:8px; color:var(--heading); }
+.cta-banner p { color:var(--body); font-size:1.0625rem; margin:0; }
+.cta-banner .actions { display:flex; gap:12px; flex-wrap:wrap; }
+
+/* ===== ABOUT PAGE ===== */
+.about-intro-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:56px; align-items:center; }
+.about-image {
+  background:linear-gradient(135deg,var(--bg-blue-tint) 0%,#dde8f5 100%);
+  border-radius:var(--radius); min-height:380px; padding:32px;
+  display:flex; flex-direction:column; gap:16px; align-items:center; justify-content:center;
+  border:1px solid var(--border);
+}
+.about-image .big-num { font-size:5rem; font-weight:800; color:var(--primary); line-height:1; }
+.about-image .label { color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; font-size:0.875rem; }
+.about-image .divider { width:60px; height:3px; background:var(--accent); border-radius:2px; }
+.about-image .sub { color:var(--heading); font-weight:600; font-size:1.125rem; text-align:center; max-width:320px; }
+
+.vm-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.vm-card { border-radius:var(--radius); padding:36px; }
+.vm-card.vision { background:var(--primary); color:#fff; }
+.vm-card.vision h3, .vm-card.vision p, .vm-card.vision li { color:#fff; }
+.vm-card.mission { background:#fff; border:1px solid var(--border); }
+.vm-card h3 { margin-bottom:12px; display:flex; align-items:center; gap:10px; }
+.vm-card h3 i { color:var(--accent); }
+.vm-card.vision h3 i { color:#ffb27d; }
+.vm-card ul { margin-top:12px; }
+.vm-card ul li {
+  padding:8px 0 8px 28px; position:relative; font-size:0.9375rem;
+}
+.vm-card ul li::before {
+  content:""; position:absolute; left:0; top:14px;
+  width:16px; height:16px; border-radius:50%; background:var(--accent);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:center; background-size:10px;
+}
+.vm-card.vision ul li::before { background-color:#ffb27d; }
+
+.strengths-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.strength-card {
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius);
+  padding:28px; transition:all .25s ease;
+}
+.strength-card:hover { border-color:var(--primary); transform:translateY(-4px); box-shadow:var(--shadow-md); }
+.strength-card .ic {
+  width:48px; height:48px; border-radius:10px;
+  background:var(--bg-blue-tint); color:var(--primary);
+  display:inline-flex; align-items:center; justify-content:center;
+  font-size:1.5rem; margin-bottom:16px;
+}
+.strength-card h4 { font-size:1.0625rem; margin-bottom:8px; }
+.strength-card p { font-size:0.9rem; color:var(--muted); margin:0; }
+
+.cert-grid { display:grid; grid-template-columns:1fr 2fr; gap:24px; align-items:stretch; }
+.cert-iso {
+  background:linear-gradient(135deg,#fff 0%,var(--bg-blue-tint) 100%);
+  border:2px solid var(--primary); border-radius:var(--radius);
+  padding:32px; text-align:center;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+}
+.cert-iso .seal {
+  width:80px; height:80px; border-radius:50%;
+  background:var(--primary); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-size:2rem;
+}
+.cert-iso h4 { font-size:1.25rem; color:var(--primary); }
+.cert-iso p { font-size:0.875rem; color:var(--muted); margin:0; }
+.partner-block {
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:32px;
+}
+.partner-block h4 { margin-bottom:14px; }
+.partner-block p { margin-bottom:16px; font-size:0.9375rem; color:var(--muted); }
+
+.subsidiary-box {
+  background:#fff; border:2px dashed var(--accent);
+  border-radius:var(--radius); padding:40px;
+  display:grid; grid-template-columns:auto 1fr auto; gap:32px; align-items:center;
+}
+.subsidiary-box .icon-wrap {
+  width:120px;
+  height:auto;
+  object-fit:contain;
+}
+.subsidiary-box .info h3 { margin-bottom:4px; color:var(--accent); font-size:1.5rem; }
+.subsidiary-box .info .role { font-weight:600; color:var(--heading); margin-bottom:10px; font-size:0.9375rem; }
+.subsidiary-box .info p { font-size:0.9375rem; margin:0; }
+
+/* ===== SERVICES PAGE SECTIONS ===== */
+.service-block {
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius);
+  padding:48px; margin-bottom:32px;
+}
+.service-block.gray-bg { background:var(--bg-gray); }
+.service-block .head-row {
+  display:flex; align-items:center; gap:16px; margin-bottom:24px; flex-wrap:wrap;
+}
+.service-block .badge {
+  width:64px; height:64px; border-radius:14px;
+  display:inline-flex; align-items:center; justify-content:center;
+  font-size:2rem;
+}
+.service-block .badge.blue { background:var(--bg-blue-tint); color:var(--primary); }
+.service-block .badge.teal { background:#e6faf3; color:#0ea968; }
+.service-block .badge.orange { background:var(--accent-light); color:var(--accent); }
+.service-block .badge.purple { background:#f3eafd; color:#6f42c1; }
+.service-block .badge.green { background:#eaf8f0; color:#2eb872; }
+.service-block .badge.coral { background:#eaf8f0; color:#2eb872; }
+.service-block .head-row h2 { margin:0; }
+.service-block .head-row .tag {
+  margin-left:auto; padding:6px 14px; background:var(--bg-gray);
+  border-radius:999px; font-size:0.8125rem; font-weight:600; color:var(--muted);
+}
+.service-block .body-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:start; }
+.service-block .body-grid p { margin-bottom:14px; font-size:1rem; }
+.service-block .solutions-list {
+  background:var(--bg-gray); border-radius:10px; padding:24px;
+}
+.service-block.gray-bg .solutions-list { background:#fff; }
+.service-block .solutions-list h4 { margin-bottom:14px; font-size:1rem; color:var(--primary); display:flex; align-items:center; gap:8px; }
+.service-block .solutions-list ul li {
+  padding:8px 0 8px 28px; position:relative; font-size:0.9375rem; color:var(--body);
+  border-bottom:1px dashed var(--border);
+}
+.service-block .solutions-list ul li:last-child { border-bottom:none; }
+.service-block .solutions-list ul li::before {
+  content:"\ea5e"; font-family:"tabler-icons";
+  position:absolute; left:0; top:9px; color:#0ea968; font-size:1.125rem;
+}
+.service-block .brand-row { margin-top:20px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+.service-block .brand-row .label { font-size:0.8125rem; color:var(--muted); font-weight:600; margin-right:6px; }
+.service-block .highlight-tag {
+  display:inline-block; padding:8px 16px; background:var(--accent-light);
+  color:var(--accent); border-radius:8px; font-weight:600; font-size:0.875rem; margin-bottom:14px;
+}
+</style>
+
+<!-- ===== CANEXXA SUBSIDIARY SPOTLIGHT ===== -->
+<section style="background:var(--bg-gray);">
+  <div class="container">
+    <div class="canexxa-card">
+      <div>
+        <div class="label-pill"><i class="ti ti-code"></i> Subsidiary · Software Division</div>
+        <h2>Meet Our Software Division</h2>
+        <div class="subname">Canexxa Solutions Private Limited</div>
+        <p>While Tech Evangelist leads hardware and infrastructure integration, our software arm — Canexxa Solutions Pvt. Ltd. — delivers custom software development, SaaS products, enterprise applications, and digital transformation services. Together, we offer complete end-to-end technology solutions.</p>
+        <div class="canexxa-pills">
+          <span>Custom Software Development</span>
+          <span>Enterprise SaaS</span>
+          <span>Digital Transformation</span>
+        </div>
+        <a href="https://canexxa.com" class="btn btn-outline" target="_blank" rel="noopener">Explore Canexxa Solutions <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="canexxa-visual">
+        <img src="asset/canexxa-logo.png" alt="Canexxa Solutions" class="logo">
+        <div class="ctitle">Canexxa Solutions</div>
+        <div class="ctag">Software · SaaS · Digital Transformation</div>
+        <div style="display:flex;gap:8px;margin-top:8px;">
+          <span style="padding:4px 10px;background:#fff;border-radius:6px;font-size:0.75rem;font-weight:600;color:var(--accent);">SaaS</span>
+          <span style="padding:4px 10px;background:#fff;border-radius:6px;font-size:0.75rem;font-weight:600;color:var(--primary);">Enterprise</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOME CTA BANNER ===== -->
+<section style="background:#fff;padding:48px 0 80px;">
+  <div class="container">
+    <div class="cta-banner">
+      <div>
+        <h2>Ready to Transform Your Technology Infrastructure?</h2>
+        <p>Talk to our experts today for a free consultation.</p>
+      </div>
+      <div class="actions">
+        <a href="#contact" class="btn btn-primary">Request a Quote</a>
+        <a href="#contact" class="btn btn-ghost">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAGE 2: ABOUT US ===== -->
+<section id="about" style="background:var(--bg-gray);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">About Us</div>
+      <h2>About Tech Evangelist Pvt. Ltd.</h2>
+      <p>A professionally managed IT System Integrator on a mission to bridge India's technology gap.</p>
+    </div>
+    <div class="about-intro-grid">
+      <div>
+        <p style="font-size:1.0625rem;">Founded with a mission to bridge the technology gap for Indian businesses and institutions, Tech Evangelist Pvt. Ltd. has grown over 10+ years to become one of India's trusted IT System Integrators.</p>
+        <p style="margin-top:12px;">We specialize in infrastructure deployment, smart education ecosystems, enterprise security, and managed technology services — serving clients from tier-1 metros to remote locations.</p>
+        <p style="margin-top:12px;">Our strength lies in deep OEM relationships, in-house technical talent, and a project management discipline that has powered 120+ school deployments, enterprise data centers, and pan-India surveillance rollouts.</p>
+        <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;">
+          <a href="#services" class="btn btn-secondary"><i class="ti ti-layout-grid"></i> Our Services</a>
+          <a href="#contact" class="btn btn-outline"><i class="ti ti-phone"></i> Talk to Us</a>
+        </div>
+      </div>
+      <div class="about-image">
+        <div class="big-num"><span class="counter" data-target="10">0</span>+</div>
+        <div class="divider"></div>
+        <div class="label">Years of Excellence</div>
+        <div class="sub">Trusted by enterprises, schools, and government bodies across India.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VISION & MISSION ===== -->
+<section style="background:#fff;">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Direction</div>
+      <h2>Vision &amp; Mission</h2>
+    </div>
+    <div class="vm-grid">
+      <div class="vm-card vision">
+        <h3><i class="ti ti-eye"></i> Our Vision</h3>
+        <p>To become a globally recognized technology solutions provider delivering innovative and sustainable digital transformation.</p>
+      </div>
+      <div class="vm-card mission">
+        <h3><i class="ti ti-target-arrow"></i> Our Mission</h3>
+        <ul>
+          <li>Deliver reliable, scalable, and secure technology infrastructure to every client.</li>
+          <li>Empower educational institutions with next-generation digital learning ecosystems.</li>
+          <li>Maintain long-term OEM and customer relationships built on trust and performance.</li>
+          <li>Expand pan-India deployment capability with dedicated AMC and support services.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STRENGTHS ===== -->
+<section style="background:var(--bg-gray);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Why TechEva</div>
+      <h2>Our Core Strengths</h2>
+      <p>What makes us a long-term technology partner rather than a one-time vendor.</p>
+    </div>
+    <div class="strengths-grid">
+      <div class="strength-card"><div class="ic"><i class="ti ti-users"></i></div><h4>Experienced Technical Team</h4><p>Certified network, surveillance, and infrastructure engineers in-house.</p></div>
+      <div class="strength-card"><div class="ic"><i class="ti ti-map-2"></i></div><h4>Nationwide Deployment</h4><p>Logistics &amp; engineering coverage across metros and tier-2/3 cities.</p></div>
+      <div class="strength-card"><div class="ic"><i class="ti ti-certificate"></i></div><h4>OEM-Certified Partnerships</h4><p>Authorized T2 partner of Cisco, Lenovo, HP, D-Link, Bosch &amp; more.</p></div>
+      <div class="strength-card"><div class="ic"><i class="ti ti-clipboard-list"></i></div><h4>Strong Project Management</h4><p>PMO-driven execution with documented SOPs and SLA tracking.</p></div>
+      <div class="strength-card"><div class="ic"><i class="ti ti-tool"></i></div><h4>Comprehensive AMC Support</h4><p>Onsite, remote, and preventive maintenance backed by spare inventory.</p></div>
+      <div class="strength-card"><div class="ic"><i class="ti ti-building"></i></div><h4>Large-Scale Implementation</h4><p>Proven across 120+ schools and multi-site enterprise rollouts.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CERTIFICATIONS & PARTNERS ===== -->
+<section style="background:#fff;">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Credentials</div>
+      <h2>Certifications &amp; Partnerships</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-iso">
+        <div class="seal"><i class="ti ti-rosette-discount-check"></i></div>
+        <h4>ISO 9001:2015</h4>
+        <p>Certified Quality Management System</p>
+      </div>
+      <div class="partner-block">
+        <h4>Authorized T2 OEM Partnerships</h4>
+        <p>Direct OEM partnerships ensure genuine products, factory warranty, and authorized technical support across our complete portfolio.</p>
+        <div class="trust-logos" style="margin-top:8px;">
+          <span class="brand-pill cisco">CISCO</span>
+          <span class="brand-pill lenovo">Lenovo</span>
+          <span class="brand-pill hp">HP</span>
+          <span class="brand-pill dlink">D-Link</span>
+          <span class="brand-pill bosch">BOSCH</span>
+          <span class="brand-pill brother">brother</span>
+          <span class="brand-pill xerox">Xerox</span>
+          <span class="brand-pill ricoh">RICOH</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;">
+      <div class="subsidiary-box">
+        <img src="asset/canexxa-logo.png" alt="Canexxa Solutions" class="icon-wrap">
+        <div class="info">
+          <h3>Canexxa Solutions Private Limited</h3>
+          <div class="role">Software &amp; Digital Solutions Arm of Tech Evangelist Group</div>
+          <p>Custom Application Development · Enterprise Software · SaaS Products · Mobile Applications · Business Process Automation.</p>
+        </div>
+        <div>
+          <a href="https://canexxa.com" class="btn btn-primary" target="_blank" rel="noopener">Know More <i class="ti ti-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAGE 3: SERVICES (Detailed sub-sections) ===== -->
+<section style="background:var(--bg-gray);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Our Services</div>
+      <h2>Complete IT Solutions Portfolio</h2>
+      <p>Six core service lines delivered with OEM-grade quality and lifecycle support.</p>
+    </div>
+
+    <!-- Service 1: CCTV -->
+    <div class="service-block" id="service-cctv">
+      <div class="head-row">
+        <div class="badge blue"><i class="ti ti-shield-check"></i></div>
+        <h2>CCTV &amp; Surveillance Solutions</h2>
+        <span class="tag">Service 01</span>
+      </div>
+      <div class="body-grid">
+        <div>
+          <p>Modern surveillance demands more than cameras. We design end-to-end IP CCTV ecosystems combining high-resolution imaging, intelligent video analytics, network-level redundancy, and centralized command for facilities of any scale.</p>
+          <p>From perimeter security in industrial campuses to multi-site retail monitoring and access-controlled enterprise buildings, our surveillance deployments are engineered for 24x7 reliability and forensic-grade evidence integrity.</p>
+          <div class="brand-row">
+            <span class="label">Brand Partners:</span>
+            <span class="brand-pill bosch">BOSCH</span>
+            <span class="brand-pill dlink">D-Link</span>
+            <span class="brand-pill" style="color:#dc1f26;border-color:#dc1f26;">HIKVISION</span>
+          </div>
+          <a href="#contact" class="btn btn-primary" style="margin-top:20px;">Request a Quote for CCTV <i class="ti ti-arrow-right"></i></a>
+        </div>
+        <div class="solutions-list">
+          <h4><i class="ti ti-list-check"></i> Solutions Include</h4>
+          <ul>
+            <li>IP CCTV Cameras (Indoor / Outdoor / PTZ)</li>
+            <li>Video Surveillance &amp; Recording (NVR / DVR)</li>
+            <li>Access Control &amp; Intrusion Detection</li>
+            <li>Video Analytics (AI-based)</li>
+            <li>Centralized Command &amp; Monitoring</li>
+            <li>Structured Cabling &amp; PoE Switching</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 2: IT Infra -->
+    <div class="service-block gray-bg" id="service-infra" style="background:#fff;">
+      <div class="head-row">
+        <div class="badge teal"><i class="ti ti-server"></i></div>
+        <h2>IT Infrastructure</h2>
+        <span class="tag">Service 02</span>
+      </div>
+      <div class="body-grid">
+        <div>
+          <p>Build the digital backbone your business depends on. We deliver fully integrated IT infrastructure — from endpoint devices to enterprise data centers — engineered for high uptime, performance, and scalable growth.</p>
+          <p>Our engineers handle structured cabling, PoE switching, wireless AP design, server virtualization, backup, and disaster-recovery readiness, ensuring every layer is configured to OEM and ISO standards.</p>
+          <div class="brand-row">
+            <span class="label">Brand Partners:</span>
+            <span class="brand-pill lenovo">Lenovo</span>
+            <span class="brand-pill hp">HP</span>
+            <span class="brand-pill cisco">CISCO</span>
+            <span class="brand-pill dlink">D-Link</span>
+          </div>
+          <a href="#contact" class="btn btn-primary" style="margin-top:20px;">Request a Quote for Infrastructure <i class="ti ti-arrow-right"></i></a>
+        </div>
+        <div class="solutions-list">
+          <h4><i class="ti ti-list-check"></i> Solutions Include</h4>
+          <ul>
+            <li>Laptops, Desktops &amp; Workstations</li>
+            <li>Servers, Storage &amp; Virtualization</li>
+            <li>Data Center Solutions</li>
+            <li>Interactive Displays &amp; Kiosks</li>
+            <li>Enterprise Computing &amp; Backup</li>
+            <li>WiFi APs, Switching &amp; Routing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 3: Smart Classroom -->
+    <div class="service-block" id="service-smart">
+      <div class="head-row">
+        <div class="badge orange"><i class="ti ti-school"></i></div>
+        <h2>Smart Classroom Solutions</h2>
+        <span class="tag">Service 03</span>
+      </div>
+      <div class="body-grid">
+        <div>
+          <span class="highlight-tag"><i class="ti ti-trophy"></i> Deployed across 120+ schools</span>
+          <p>Transform every classroom into a connected, engaging, and outcome-driven learning environment. Our integrated smart-education stack combines Interactive Flat Panels (IFP), LMS &amp; ERP integration, digital content, and language lab solutions — all backed by teacher training.</p>
+          <p>From CBSE/ICSE schools to large university campuses, we deliver future-ready ed-tech ecosystems that improve learning outcomes and simplify administration.</p>
+          <a href="#contact" class="btn btn-primary" style="margin-top:8px;">Request a Quote for Smart Education <i class="ti ti-arrow-right"></i></a>
+        </div>
+        <div class="solutions-list">
+          <h4><i class="ti ti-list-check"></i> Solutions Include</h4>
+          <ul>
+            <li>Interactive Flat Panels (IFP)</li>
+            <li>Digital Smart Classrooms</li>
+            <li>LMS Integration &amp; Training</li>
+            <li>ERP Systems for Schools</li>
+            <li>Language Lab Solutions</li>
+            <li>Digital Assessment Tools</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 4: Digital Content -->
+    <div class="service-block" id="service-ebooks" style="background:#fff;">
+      <div class="head-row">
+        <div class="badge purple"><i class="ti ti-books"></i></div>
+        <h2>Digital Content &amp; E-Books</h2>
+        <span class="tag">Service 04</span>
+      </div>
+      <div class="body-grid">
+        <div>
+          <span class="highlight-tag" style="background:#f3eafd;color:#6f42c1;"><i class="ti ti-library"></i> 70,000+ titles · 72 publishers</span>
+          <p>India's most comprehensive school and library digital reading ecosystem. Our curated digital library brings together 70,000+ titles from 72 leading Indian publishers, all licensed for copyright-compliant institutional use.</p>
+          <p>Students and educators access content across web, tablet, and mobile, while administrators manage usage, licensing, and analytics through a unified dashboard.</p>
+          <a href="#contact" class="btn btn-primary" style="margin-top:8px;">Request a Quote for E-Books <i class="ti ti-arrow-right"></i></a>
+        </div>
+        <div class="solutions-list">
+          <h4><i class="ti ti-list-check"></i> Solutions Include</h4>
+          <ul>
+            <li>70,000+ Digital E-Books Library</li>
+            <li>72 Leading Indian Publishers</li>
+            <li>Copyright-Compliant Content</li>
+            <li>Multi-Device Access (Web/Mobile)</li>
+            <li>Digital Learning Ecosystem</li>
+            <li>Usage Analytics &amp; Reporting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 5: Printing -->
+    <div class="service-block" id="service-print">
+      <div class="head-row">
+        <div class="badge green"><i class="ti ti-printer"></i></div>
+        <h2>Printing &amp; Barcode Solutions</h2>
+        <span class="tag">Service 05</span>
+      </div>
+      <div class="body-grid">
+        <div>
+          <p>Reliable printing, labeling, and identification technology for retail, manufacturing, logistics, healthcare, and enterprise workflows. We supply, install, and service the full range of barcode, thermal, and laser printing infrastructure.</p>
+          <p>Complete consumables fulfillment — toners, ribbons, labels, and spare parts — ensures uninterrupted operations across every shift.</p>
+          <div class="brand-row">
+            <span class="label">Brand Partners:</span>
+            <span class="brand-pill hp">HP</span>
+            <span class="brand-pill brother">brother</span>
+            <span class="brand-pill xerox">Xerox</span>
+            <span class="brand-pill lexmark">Lexmark</span>
+            <span class="brand-pill ricoh">RICOH</span>
+            <span class="brand-pill samsung">SAMSUNG</span>
+          </div>
+          <a href="#contact" class="btn btn-primary" style="margin-top:20px;">Request a Quote for Printing <i class="ti ti-arrow-right"></i></a>
+        </div>
+        <div class="solutions-list">
+          <h4><i class="ti ti-list-check"></i> Solutions Include</h4>
+          <ul>
+            <li>Thermal Printers (Desktop / Industrial)</li>
+            <li>Barcode Printers &amp; Scanners</li>
+            <li>Labels, Stickers &amp; P-Touch Labels</li>
+            <li>Toners &amp; Inkjet Cartridges</li>
+            <li>Dot Matrix Ribbons</li>
+            <li>Line Matrix Ribbons</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 6: System Integration -->
+    <div class="service-block" id="service-integration" style="background:#fff;">
+      <div class="head-row">
+        <div class="badge coral"><i class="ti ti-topology-ring"></i></div>
+        <h2>System Integration</h2>
+        <span class="tag">Service 06</span>
+      </div>
+      <div class="body-grid">
+        <div>
+          <p>The discipline of bringing every technology layer together — networks, surveillance, cloud, endpoints, and applications — under a single, well-managed deployment. Our system integration practice is the connective tissue across every Tech Evangelist project.</p>
+          <p>We handle design, supply, installation, configuration, commissioning, and ongoing AMC — single accountability for the entire technology lifecycle.</p>
+          <a href="#contact" class="btn btn-primary" style="margin-top:8px;">Request a Quote for Integration <i class="ti ti-arrow-right"></i></a>
+        </div>
+        <div class="solutions-list">
+          <h4><i class="ti ti-list-check"></i> Solutions Include</h4>
+          <ul>
+            <li>IT Infrastructure Integration</li>
+            <li>Network Integration &amp; Optimization</li>
+            <li>Surveillance Integration</li>
+            <li>Cloud Connectivity &amp; Hybrid Setup</li>
+            <li>Centralized Management Platforms</li>
+            <li>Enterprise Deployment &amp; AMC</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* ===== PROJECTS PAGE ===== */
+.case-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.case-card {
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius);
+  overflow:hidden; transition:all .3s ease;
+  display:flex; flex-direction:column;
+}
+.case-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); border-color:var(--primary); }
+.case-header {
+  padding:24px; background:linear-gradient(135deg,var(--bg-blue-tint) 0%,#dde8f5 100%);
+  display:flex; gap:12px; align-items:center; border-bottom:1px solid var(--border);
+}
+.case-header.orange { background:linear-gradient(135deg,var(--accent-light) 0%,#d8f2e3 100%); }
+.case-header.teal { background:linear-gradient(135deg,#e6faf3 0%,#bff0dd 100%); }
+.case-header .icons { display:flex; gap:8px; }
+.case-header .icons i {
+  width:38px; height:38px; border-radius:8px; background:#fff;
+  display:inline-flex; align-items:center; justify-content:center;
+  color:var(--primary); font-size:1.125rem;
+}
+.case-header.orange .icons i { color:var(--accent); }
+.case-header.teal .icons i { color:#0ea968; }
+.case-tags { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+.case-tag {
+  padding:4px 10px; background:#fff; border-radius:6px;
+  font-size:0.75rem; font-weight:600; color:var(--primary);
+}
+.case-body { padding:24px; flex:1; display:flex; flex-direction:column; gap:14px; }
+.case-body h3 { font-size:1.125rem; }
+.case-row { display:flex; gap:10px; }
+.case-row .label {
+  flex-shrink:0; width:80px; font-size:0.75rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:0.05em; color:var(--accent);
+  padding-top:2px;
+}
+.case-row .val { font-size:0.9rem; color:var(--body); }
+.case-stats-bar {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:16px;
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius);
+  padding:32px; margin-top:48px;
+}
+.case-stats-bar .stat { text-align:center; padding:0 8px; border-right:1px solid var(--border); }
+.case-stats-bar .stat:last-child { border-right:none; }
+.case-stats-bar .stat .num { font-size:1.875rem; font-weight:700; color:var(--primary); }
+.case-stats-bar .stat .label { font-size:0.875rem; color:var(--muted); }
+
+/* ===== CLIENTS PAGE ===== */
+.clients-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.client-type-col {
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius);
+  padding:32px; transition:all .25s ease;
+}
+.client-type-col:hover { box-shadow:var(--shadow-md); }
+.client-type-col h3 {
+  display:flex; align-items:center; gap:10px; margin-bottom:16px;
+  padding-bottom:12px; border-bottom:2px solid var(--accent); font-size:1.125rem;
+}
+.client-type-col h3 i { color:var(--accent); }
+.client-type-col ul li {
+  padding:8px 0 8px 24px; position:relative; font-size:0.9375rem; color:var(--body);
+}
+.client-type-col ul li::before {
+  content:"\eb7b"; font-family:"tabler-icons"; position:absolute; left:0; top:8px;
+  color:var(--primary); font-size:1rem;
+}
+.trust-statement {
+  text-align:center; max-width:780px; margin:48px auto 0;
+  padding:48px; background:var(--bg-blue-tint); border-radius:var(--radius);
+  border:1px solid var(--border);
+}
+.trust-statement h3 { color:var(--primary); margin-bottom:16px; font-size:1.375rem; }
+.trust-statement p { font-size:1.0625rem; }
+.trust-badges { display:flex; gap:16px; justify-content:center; margin-top:24px; flex-wrap:wrap; }
+.trust-badge {
+  display:inline-flex; align-items:center; gap:10px;
+  padding:12px 20px; background:#fff; border:2px solid var(--primary);
+  border-radius:10px; font-weight:700; color:var(--primary); font-size:0.9375rem;
+}
+.trust-badge.orange { border-color:var(--accent); color:var(--accent); }
+.trust-badge i { font-size:1.25rem; }
+
+/* ===== CONTACT PAGE ===== */
+.contact-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:48px; align-items:start; }
+.contact-info-card {
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius);
+  padding:24px; margin-bottom:16px;
+  display:flex; gap:16px; align-items:flex-start;
+  transition:all .25s ease;
+}
+.contact-info-card:hover { border-color:var(--accent); transform:translateY(-2px); box-shadow:var(--shadow-sm); }
+.contact-info-card .ic {
+  width:48px; height:48px; border-radius:10px; flex-shrink:0;
+  background:var(--accent-light); color:var(--accent);
+  display:flex; align-items:center; justify-content:center; font-size:1.375rem;
+}
+.contact-info-card h4 { font-size:1rem; margin-bottom:4px; }
+.contact-info-card p, .contact-info-card a { font-size:0.9375rem; color:var(--body); margin:0; }
+.contact-info-card a { display:block; }
+.contact-form {
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius);
+  padding:36px;
+}
+.contact-form h3 { margin-bottom:6px; }
+.contact-form .sub { color:var(--muted); margin-bottom:24px; font-size:0.9375rem; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+.form-group { display:flex; flex-direction:column; gap:6px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-group label {
+  font-size:0.8125rem; font-weight:600; color:var(--heading);
+}
+.form-group label .req { color:var(--accent); }
+.form-group input, .form-group select, .form-group textarea {
+  padding:12px 14px; border:1.5px solid var(--border); border-radius:8px;
+  font-family:inherit; font-size:0.9375rem; color:var(--heading);
+  background:#fff; transition:all .2s ease;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline:none; border-color:var(--primary); box-shadow:0 0 0 3px rgba(26,60,110,0.08);
+}
+.form-group textarea { resize:vertical; min-height:100px; }
+.form-group .err { color:#2eb872; font-size:0.75rem; display:none; }
+.form-group.invalid input, .form-group.invalid select, .form-group.invalid textarea { border-color:#2eb872; }
+.form-group.invalid .err { display:block; }
+.form-note { color:var(--muted); font-size:0.8125rem; margin-top:14px; display:flex; align-items:center; gap:6px; }
+.form-note i { color:#0ea968; }
+
+.toast {
+  position:fixed; bottom:24px; right:24px; z-index:2000;
+  background:#0ea968; color:#fff; padding:14px 20px; border-radius:10px;
+  display:flex; align-items:center; gap:10px; font-weight:600;
+  box-shadow:var(--shadow-lg); transform:translateX(120%); transition:transform .3s ease;
+}
+.toast.show { transform:translateX(0); }
+
+.svc-pills { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+.svc-pill {
+  padding:8px 16px; background:#fff; border:1.5px solid var(--primary);
+  color:var(--primary); border-radius:999px; font-weight:600; font-size:0.875rem;
+  transition:all .2s ease;
+}
+.svc-pill:hover { background:var(--primary); color:#fff; }
+
+/* ===== FOOTER ===== */
+footer {
+  background:var(--bg-gray); border-top:1px solid var(--border);
+  padding:64px 0 0;
+}
+.footer-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr 1.3fr; gap:48px; }
+.footer-col h4 {
+  font-size:0.875rem; text-transform:uppercase; letter-spacing:0.08em;
+  color:var(--heading); margin-bottom:20px; font-weight:700;
+}
+.footer-col p, .footer-col li { font-size:0.9rem; color:var(--body); margin-bottom:10px; }
+.footer-col li a { color:var(--body); }
+.footer-col li a:hover { color:var(--accent); }
+.footer-brand .brand { margin-bottom:14px; }
+.footer-brand .tagline { color:var(--muted); font-size:0.9rem; margin-bottom:14px; font-style:italic; }
+.footer-brand .iso-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 14px; background:#fff; border:1.5px solid var(--primary);
+  border-radius:8px; color:var(--primary); font-weight:600; font-size:0.8125rem; margin-bottom:14px;
+}
+.footer-contact-row { display:flex; gap:10px; align-items:flex-start; margin-bottom:10px; }
+.footer-contact-row i { color:var(--accent); margin-top:2px; flex-shrink:0; }
+.footer-canexxa {
+  margin-top:16px; padding:16px; background:#fff;
+  border:1px dashed var(--accent); border-radius:10px;
+}
+.footer-canexxa-logo {
+  width:140px;
+  height:auto;
+  object-fit:contain;
+  margin-bottom:12px;
+}
+.footer-canexxa .nm { font-weight:700; color:var(--accent); font-size:0.875rem; }
+.footer-canexxa .desc { font-size:0.8125rem; color:var(--muted); }
+.footer-bottom {
+  margin-top:48px; padding:20px 0; border-top:1px solid var(--border);
+  text-align:center; font-size:0.8125rem; color:var(--muted);
+}
+.footer-bottom span { color:var(--accent); font-weight:600; }
+
+/* ===== ANIMATIONS ===== */
+.fade-in { opacity:0; transform:translateY(20px); transition:all .6s ease; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .industries-row { grid-template-columns:repeat(4,1fr) !important; }
+  .services-grid, .strengths-grid, .case-grid, .clients-grid { grid-template-columns:repeat(2,1fr); }
+  .hero-grid, .about-grid, .about-intro-grid, .vm-grid, .cert-grid, .contact-grid, .canexxa-card { grid-template-columns:1fr; }
+  .stats-bar .container { grid-template-columns:repeat(2,1fr); gap:32px; }
+  .stats-bar .stat:nth-child(2) { border-right:none; }
+  .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+  .subsidiary-box { grid-template-columns:1fr; text-align:center; }
+  .service-block .body-grid { grid-template-columns:1fr; }
+}
+@media (max-width: 768px) {
+  section { padding:56px 0; }
+  .hero { padding:120px 0 56px; }
+  .hamburger { display:flex; }
+  .nav-links {
+    display:none; position:absolute; top:100%; left:0; right:0;
+    background:#fff; flex-direction:column; align-items:stretch; padding:16px;
+    border-bottom:1px solid var(--border); box-shadow:var(--shadow-md); gap:4px;
+  }
+  .nav-links.open { display:flex; }
+  .nav-links a { padding:12px 14px; }
+  .dropdown-menu { position:static; opacity:1; visibility:visible; transform:none;
+    box-shadow:none; border:none; padding:0 0 0 16px; min-width:0; }
+  .nav-cta { margin:8px 0 0 !important; text-align:center; }
+  .hero-stats { grid-template-columns:1fr 1fr; }
+  .services-grid, .strengths-grid, .case-grid, .clients-grid, .form-row { grid-template-columns:1fr; }
+  .industries-row { grid-template-columns:repeat(2,1fr) !important; }
+  .stats-bar .container { grid-template-columns:1fr 1fr; }
+  .stats-bar .stat { border-right:none !important; }
+  .footer-grid { grid-template-columns:1fr; gap:32px; }
+  .case-stats-bar { grid-template-columns:1fr 1fr; }
+  .case-stats-bar .stat { border-right:none; padding:16px 0; border-bottom:1px solid var(--border); }
+  .case-stats-bar .stat:last-child, .case-stats-bar .stat:nth-last-child(2) { border-bottom:none; }
+  .canexxa-card, .service-block, .contact-form, .trust-statement { padding:28px; }
+  .cta-banner { padding:28px; flex-direction:column; align-items:flex-start; text-align:left; }
+  h1 { font-size:1.875rem !important; }
+  .hero-ctas .btn { flex:1; justify-content:center; }
+}
+@media (max-width: 480px) {
+  .hero-stats { grid-template-columns:1fr; }
+  .industries-row { grid-template-columns:1fr !important; }
+  .case-stats-bar { grid-template-columns:1fr; }
+}
+</style>
+
+<!-- ===== PAGE 4: PROJECTS / CASE STUDIES ===== -->
+<section id="projects" style="background:#fff;">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Case Studies</div>
+      <h2>Our Proven Project Experience</h2>
+      <p>From school deployments to enterprise data centers — delivering results that matter.</p>
+    </div>
+
+    <div class="case-grid">
+      <!-- Case 1 -->
+      <div class="case-card">
+        <div class="case-header orange">
+          <div class="icons">
+            <i class="ti ti-school"></i>
+            <i class="ti ti-database"></i>
+            <i class="ti ti-chart-bar"></i>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-tags">
+            <span class="case-tag">Education</span>
+            <span class="case-tag">Scale: 120 Schools</span>
+          </div>
+          <h3>LMS &amp; ERP School Deployment</h3>
+          <div class="case-row"><div class="label">Problem</div><div class="val">Educational institutions lacked centralized digital learning management.</div></div>
+          <div class="case-row"><div class="label">Solution</div><div class="val">Deployed integrated LMS and ERP across 120 schools with onsite teacher training.</div></div>
+          <div class="case-row"><div class="label">Outcome</div><div class="val">Centralized administration, improved learning outcomes, paperless management.</div></div>
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="case-card">
+        <div class="case-header">
+          <div class="icons">
+            <i class="ti ti-server"></i>
+            <i class="ti ti-network"></i>
+            <i class="ti ti-shield-check"></i>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-tags">
+            <span class="case-tag">Enterprise</span>
+            <span class="case-tag">Sector: Corporate</span>
+          </div>
+          <h3>Enterprise IT Infrastructure</h3>
+          <div class="case-row"><div class="label">Problem</div><div class="val">Outdated infrastructure causing downtime and scalability bottlenecks.</div></div>
+          <div class="case-row"><div class="label">Solution</div><div class="val">End-to-end server, storage, networking and WiFi deployment with managed AMC.</div></div>
+          <div class="case-row"><div class="label">Outcome</div><div class="val">99.9% uptime, scalable infrastructure, reduced IT operating overhead.</div></div>
+        </div>
+      </div>
+
+      <!-- Case 3 -->
+      <div class="case-card">
+        <div class="case-header teal">
+          <div class="icons">
+            <i class="ti ti-device-tv"></i>
+            <i class="ti ti-books"></i>
+            <i class="ti ti-users"></i>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-tags">
+            <span class="case-tag">Smart Education</span>
+            <span class="case-tag">Scale: Multi-school</span>
+          </div>
+          <h3>Smart Classroom Ecosystem</h3>
+          <div class="case-row"><div class="label">Problem</div><div class="val">Traditional classrooms with no digital engagement tools or interactivity.</div></div>
+          <div class="case-row"><div class="label">Solution</div><div class="val">Interactive panels, digital content library, LMS, and teacher productivity tools.</div></div>
+          <div class="case-row"><div class="label">Outcome</div><div class="val">Increased student engagement, structured digital curriculum delivery.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Stats Bar -->
+    <div class="case-stats-bar">
+      <div class="stat"><div class="num"><span class="counter" data-target="120">0</span>+</div><div class="label">Schools Deployed</div></div>
+          <div class="stat"><div class="num"><span class="counter" data-target="10">0</span>+</div><div class="label">Years Experience</div></div>
+      <div class="stat"><div class="num"><span class="counter" data-target="10">0</span>+</div><div class="label">OEM Brands</div></div>
+      <div class="stat"><div class="num">Pan-India</div><div class="label">Reach</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAGE 5: CLIENTS ===== -->
+<section id="clients" style="background:var(--bg-gray);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Who We Work With</div>
+      <h2>Sectors &amp; Industries We Serve</h2>
+      <p>Solutions tailored to the unique operational realities of every vertical.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px;" class="strengths-grid">
+      <div class="strength-card"><div class="ic"><i class="ti ti-school"></i></div><h4>Education</h4><p>Schools, colleges, universities &amp; coaching institutes.</p></div>
+      <div class="strength-card"><div class="ic"><i class="ti ti-building-skyscraper"></i></div><h4>Enterprise</h4><p>Mid-market and large corporates across services and IT.</p></div>
+      <div class="strength-card"><div class="ic"><i class="ti ti-building-bank"></i></div><h4>Government</h4><p>Central, state, and local public sector institutions.</p></div>
+      <div class="strength-card"><div class="ic"><i class="ti ti-shopping-bag"></i></div><h4>Retail</h4><p>Single-store and multi-location retail chains.</p></div>
+      <div class="strength-card"><div class="ic"><i class="ti ti-heart-rate-monitor"></i></div><h4>Healthcare</h4><p>Hospitals, clinics, and diagnostic networks.</p></div>
+      <div class="strength-card"><div class="ic"><i class="ti ti-building-factory-2"></i></div><h4>Manufacturing</h4><p>Plants, warehouses, and logistics operations.</p></div>
+    </div>
+
+    <div class="section-head">
+      <div class="eyebrow">Our Client Base</div>
+      <h2>Trusted Across Verticals</h2>
+    </div>
+    <div class="clients-grid">
+      <div class="client-type-col">
+        <h3><i class="ti ti-school"></i> Schools &amp; Universities</h3>
+        <ul>
+          <li>K-12 CBSE / ICSE / State Board Schools</li>
+          <li>International Schools</li>
+          <li>Engineering &amp; Management Colleges</li>
+          <li>Universities &amp; Coaching Centers</li>
+          <li>Skill &amp; Vocational Institutes</li>
+        </ul>
+      </div>
+      <div class="client-type-col">
+        <h3><i class="ti ti-building-skyscraper"></i> Enterprises &amp; Corporates</h3>
+        <ul>
+          <li>IT &amp; ITeS Companies</li>
+          <li>Banking, Financial Services &amp; Insurance</li>
+          <li>Manufacturing &amp; Industrial</li>
+          <li>Healthcare Networks</li>
+          <li>Hospitality &amp; Service Industry</li>
+        </ul>
+      </div>
+      <div class="client-type-col">
+        <h3><i class="ti ti-shopping-bag"></i> Retail &amp; SMBs</h3>
+        <ul>
+          <li>Multi-store Retail Chains</li>
+          <li>Quick-Service &amp; F&amp;B Outlets</li>
+          <li>Small &amp; Medium Businesses</li>
+          <li>Logistics &amp; Warehousing</li>
+          <li>Local Government Offices</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="trust-statement">
+      <h3>Built on Trust. Delivered at Scale.</h3>
+      <p>We've worked with 100+ organizations across India, delivering technology solutions that are reliable, scalable, and built for growth.</p>
+      <div class="trust-badges">
+        <div class="trust-badge"><i class="ti ti-rosette-discount-check"></i> ISO 9001:2015 Certified</div>
+        <div class="trust-badge orange"><i class="ti ti-stars"></i> T2 Partner · Cisco, Lenovo, HP</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAGE 6: CONTACT ===== -->
+<section id="contact" style="background:#fff;">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Get In Touch</div>
+      <h2>Let's Build Your Technology Roadmap</h2>
+      <p>Reach out for a free consultation, RFP response, or AMC quote — our team responds within one business day.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-card">
+          <div class="ic"><i class="ti ti-building"></i></div>
+          <div>
+            <h4>Office Address</h4>
+            <p>Tech Evangelist Pvt. Ltd.<br>Mumbai, Maharashtra, India</p>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="ic"><i class="ti ti-phone"></i></div>
+          <div>
+            <h4>Phone</h4>
+            <a href="tel:+912241315610">+91-22-4131-5610</a>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="ic"><i class="ti ti-mail"></i></div>
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:support@techeva.in">support@techeva.in</a>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="ic"><i class="ti ti-world"></i></div>
+          <div>
+            <h4>Website</h4>
+            <a href="https://www.techeva.in" target="_blank" rel="noopener">www.techeva.in</a>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="ic"><i class="ti ti-clock"></i></div>
+          <div>
+            <h4>Business Hours</h4>
+            <p>Mon – Sat &nbsp;|&nbsp; 9:30 AM – 6:30 PM IST</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send Us an Inquiry</h3>
+        <p class="sub">Tell us about your project requirements — we'll get back to you with a tailored proposal.</p>
+        <form id="inquiryForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name <span class="req">*</span></label>
+              <input type="text" name="name" placeholder="Your full name" required>
+              <span class="err">Please enter your name.</span>
+            </div>
+            <div class="form-group">
+              <label>Company Name <span class="req">*</span></label>
+              <input type="text" name="company" placeholder="Organization name" required>
+              <span class="err">Please enter your company name.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone <span class="req">*</span></label>
+              <input type="tel" name="phone" placeholder="+91-xxxxxxxxxx" required>
+              <span class="err">Please enter a valid phone number.</span>
+            </div>
+            <div class="form-group">
+              <label>Email <span class="req">*</span></label>
+              <input type="email" name="email" placeholder="you@company.com" required>
+              <span class="err">Please enter a valid email address.</span>
+            </div>
+          </div>
+          <div class="form-group full" style="margin-bottom:16px;">
+            <label>Service Interest</label>
+            <select name="service">
+              <option value="">Select a service</option>
+              <option>CCTV &amp; Surveillance</option>
+              <option>IT Infrastructure</option>
+              <option>Smart Classroom Solutions</option>
+              <option>Digital Content &amp; E-Books</option>
+              <option>Printing &amp; Barcode Solutions</option>
+              <option>System Integration</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Message</label>
+            <textarea name="message" rows="4" placeholder="Briefly describe your requirement..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-top:20px;width:100%;justify-content:center;">
+            Send Inquiry <i class="ti ti-send"></i>
+          </button>
+          <div class="form-note">
+            <i class="ti ti-circle-check-filled"></i>
+            Our team will respond within 1 business day.
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div style="margin-top:56px;text-align:center;">
+      <h4 style="margin-bottom:16px;font-size:0.875rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);">Inquiries Accepted For</h4>
+      <div class="svc-pills">
+        <a href="#service-cctv" class="svc-pill">CCTV &amp; Surveillance</a>
+        <a href="#service-infra" class="svc-pill">IT Infrastructure</a>
+        <a href="#service-smart" class="svc-pill">Smart Classroom</a>
+        <a href="#service-ebooks" class="svc-pill">Digital E-Books</a>
+        <a href="#service-print" class="svc-pill">Printing &amp; Barcode</a>
+        <a href="#service-integration" class="svc-pill">System Integration</a>
+        <a href="#service-integration" class="svc-pill">AMC &amp; Managed Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="#home" class="brand">
+          <div class="brand-logo">TE</div>
+          <div class="brand-text">
+            <div class="name">TechEva</div>
+            <div class="sub">Pvt. Ltd.</div>
+          </div>
+        </a>
+        <div class="tagline">"Transforming Businesses Through Smart Technology Solutions"</div>
+        <div class="iso-badge"><i class="ti ti-rosette-discount-check"></i> ISO 9001:2015 Certified</div>
+        <p style="font-size:0.875rem;color:var(--muted);">India's trusted IT System Integrator with 10+ years of experience in infrastructure, surveillance, smart education, and managed services.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#clients">Clients</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#service-cctv">CCTV &amp; Surveillance</a></li>
+          <li><a href="#service-infra">IT Infrastructure</a></li>
+          <li><a href="#service-smart">Smart Classroom</a></li>
+          <li><a href="#service-ebooks">Digital E-Books</a></li>
+          <li><a href="#service-print">Printing &amp; Barcode</a></li>
+          <li><a href="#service-integration">System Integration</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-row"><i class="ti ti-map-pin"></i><span>Mumbai, Maharashtra, India</span></div>
+        <div class="footer-contact-row"><i class="ti ti-phone"></i><a href="tel:+912241315610">+91-22-4131-5610</a></div>
+        <div class="footer-contact-row"><i class="ti ti-mail"></i><a href="mailto:support@techeva.in">support@techeva.in</a></div>
+        <div class="footer-contact-row"><i class="ti ti-world"></i><a href="https://www.techeva.in" target="_blank" rel="noopener">www.techeva.in</a></div>
+        <div class="footer-canexxa">
+          <img src="asset/canexxa-logo.png" alt="Canexxa Solutions" class="footer-canexxa-logo">
+          <div class="nm">Canexxa Solutions Pvt. Ltd.</div>
+          <div class="desc">Software Division of TechEva Group · <a href="https://canexxa.com" target="_blank" rel="noopener" style="color:var(--accent);">Learn more →</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Tech Evangelist Pvt. Ltd. All Rights Reserved. &nbsp;|&nbsp;
+      A Tech Evangelist Group Company &nbsp;|&nbsp;
+      <span>Canexxa Solutions Pvt. Ltd. — Software Division</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast">
+  <i class="ti ti-circle-check-filled"></i>
+  <span>Inquiry sent! Our team will reply within 1 business day.</span>
+</div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+(function(){
+  'use strict';
+
+  // ===== Sticky navbar shrink =====
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+
+  // ===== Mobile hamburger =====
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('open');
+    });
+  });
+
+  // ===== Animated counters via IntersectionObserver =====
+  const counters = document.querySelectorAll('.counter');
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.target, 10);
+        const duration = 1500;
+        const start = performance.now();
+        const isLarge = target >= 1000;
+        const step = (now) => {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = Math.floor(eased * target);
+          el.textContent = isLarge ? value.toLocaleString('en-IN') : value;
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = isLarge ? target.toLocaleString('en-IN') : target;
+        };
+        requestAnimationFrame(step);
+        counterObs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+  counters.forEach(c => counterObs.observe(c));
+
+  // ===== Fade-in sections =====
+  const fadeTargets = document.querySelectorAll('section, .case-card, .service-card, .strength-card, .feature-card, .industry-card, .client-type-col, .canexxa-card, .subsidiary-box');
+  fadeTargets.forEach(el => el.classList.add('fade-in'));
+  const fadeObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  fadeTargets.forEach(el => fadeObs.observe(el));
+
+  // ===== Active nav link highlighting =====
+  const sections = ['home','about','services','projects','clients','contact'].map(id => document.getElementById(id)).filter(Boolean);
+  const navAnchors = document.querySelectorAll('.nav-links > a, .nav-links .dropdown > a');
+  const setActive = (id) => {
+    navAnchors.forEach(a => {
+      const href = a.getAttribute('href');
+      if (href === '#' + id) a.classList.add('active');
+      else a.classList.remove('active');
+    });
+  };
+  const sectionObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => sectionObs.observe(s));
+
+  // ===== Form validation =====
+  const form = document.getElementById('inquiryForm');
+  const toast = document.getElementById('toast');
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRe = /^[+\d][\d\s\-()]{6,}$/;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+    form.querySelectorAll('.form-group').forEach(fg => fg.classList.remove('invalid'));
+
+    const name = form.name.value.trim();
+    const company = form.company.value.trim();
+    const phone = form.phone.value.trim();
+    const email = form.email.value.trim();
+
+    if (!name) { form.name.closest('.form-group').classList.add('invalid'); valid = false; }
+    if (!company) { form.company.closest('.form-group').classList.add('invalid'); valid = false; }
+    if (!phoneRe.test(phone)) { form.phone.closest('.form-group').classList.add('invalid'); valid = false; }
+    if (!emailRe.test(email)) { form.email.closest('.form-group').classList.add('invalid'); valid = false; }
+
+    if (!valid) {
+      const firstInvalid = form.querySelector('.form-group.invalid');
+      if (firstInvalid) firstInvalid.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    // Success
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+    form.reset();
+  });
+
+  // ===== Smooth scroll fallback for older browsers =====
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href.length > 1) {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const top = target.getBoundingClientRect().top + window.pageYOffset - 70;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      }
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
