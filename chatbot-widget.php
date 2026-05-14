@@ -66,6 +66,10 @@ window.evaToggle = function(){
   win.classList.toggle('eva-open', open);
   fab.classList.toggle('eva-fab--hidden', open);
   document.getElementById('evaBadge').style.display = 'none';
+  /* Prevent body scroll on mobile when chat is open */
+  if(window.innerWidth <= 480){
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
   if(!open) localStorage.setItem(LS_KEY, '1');
   if(open && history.length === 0) evaGreet();
   if(open) setTimeout(function(){ document.getElementById('evaInput').focus(); }, 300);
@@ -92,6 +96,7 @@ window.addEventListener('load', function(){
       document.getElementById('evaWindow').classList.add('eva-open');
       document.getElementById('evaFab').classList.add('eva-fab--hidden');
       document.getElementById('evaBadge').style.display = 'none';
+      if(window.innerWidth <= 480) document.body.style.overflow = 'hidden';
       evaGreet();
       setTimeout(function(){ document.getElementById('evaInput').focus(); }, 400);
     }, 1500);
@@ -417,12 +422,95 @@ setTimeout(function(){
   text-align: center; font-size: 0.68rem; color: #9ca3af; margin-top: 6px;
 }
 
-/* ── Responsive ── */
-@media (max-width: 480px) {
+/* ── Responsive — Tablet ── */
+@media (max-width: 640px) {
   .eva-window {
-    width: calc(100vw - 16px); right: 8px; bottom: 16px;
-    height: calc(100vh - 32px); max-height: none; border-radius: 16px;
+    width: calc(100vw - 24px);
+    right: 12px;
+    bottom: 12px;
+    height: 72vh;
+    max-height: calc(100vh - 24px);
+    border-radius: 18px;
   }
-  .eva-fab { right: 16px; bottom: 20px; }
+  .eva-fab {
+    right: 14px;
+    bottom: 18px;
+    padding: 10px 14px 10px 12px;
+  }
+  .eva-fab-label { font-size: 0.8rem; }
+  .eva-bubble { max-width: calc(100vw - 100px); }
+  .eva-chips  { max-width: calc(100vw - 90px); }
+}
+
+/* ── Responsive — Mobile ── */
+@media (max-width: 480px) {
+  /* Window becomes a full bottom sheet */
+  .eva-window {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 88vh;
+    max-height: 88vh;
+    border-radius: 22px 22px 0 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transform-origin: bottom center;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* FAB — icon only, compact */
+  .eva-fab {
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    padding: 13px;
+    border-radius: 50%;
+    gap: 0;
+  }
+  .eva-fab-label { display: none; }
+  .eva-fab-icon i { font-size: 26px; }
+  .eva-pulse { border-radius: 50%; }
+
+  /* Header */
+  .eva-header { padding: 12px 14px; }
+  .eva-avatar { width: 38px; height: 38px; font-size: 18px; }
+  .eva-name { font-size: 0.92rem; }
+  .eva-header-btn { width: 34px; height: 34px; font-size: 16px; }
+
+  /* Body */
+  .eva-body { padding: 14px 12px 6px; gap: 12px; }
+
+  /* Bubbles — use more screen width */
+  .eva-bubble {
+    max-width: calc(100vw - 80px);
+    font-size: 0.875rem;
+    padding: 10px 13px;
+  }
+
+  /* Chips — bigger touch targets */
+  .eva-chips { max-width: calc(100vw - 70px); gap: 7px; }
+  .eva-chip {
+    padding: 7px 13px;
+    font-size: 0.78rem;
+    border-radius: 22px;
+    min-height: 34px;
+  }
+
+  /* Footer — taller input for easy tapping */
+  .eva-footer { padding: 10px 12px 12px; }
+  .eva-input {
+    padding: 11px 16px;
+    font-size: 0.9rem;
+  }
+  .eva-send {
+    width: 42px; height: 42px;
+    font-size: 17px;
+  }
+  .eva-powered { font-size: 0.66rem; margin-top: 5px; }
+}
+
+/* ── Very small screens (≤360px) ── */
+@media (max-width: 360px) {
+  .eva-window { height: 90vh; }
+  .eva-bubble { max-width: calc(100vw - 70px); }
 }
 </style>

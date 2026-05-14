@@ -19,7 +19,7 @@ include 'header.php';
           <i class="ti ti-shield-check"></i> ISO 9001:2015 Certified &middot; 10+ Years
         </div>
         <h1>Your Trusted <span class="highlight">IT System Integration</span> Partner</h1>
-        <p class="lead">Trusted by <strong>120+ schools, enterprises &amp; government bodies</strong> across India — we design, supply, install, and support complete IT ecosystems. From CCTV &amp; networking to smart classrooms, our certified team delivers on time, every time. Backed by <strong>Canexxa Solutions</strong> — our in-house software division for custom applications &amp; digital products.</p>
+        <p class="lead">With <strong>10+ years of deep domain expertise</strong>, Tech Evangelist is India's trusted IT System Integrator — delivering enterprise-grade infrastructure, surveillance, smart education &amp; managed services to clients nationwide.<br><span class="lead-sub">Powered further by <a href="https://canexxa.com" target="_blank" rel="noopener" class="lead-link"><strong>Canexxa Solutions</strong></a> — our in-house software division — bringing custom applications &amp; digital products under one roof.</span></p>
         <div class="hero-ctas">
           <a href="#contact" class="btn btn-primary"><i class="ti ti-file-text"></i> Request a Quote</a>
           <a href="our-services" class="btn btn-secondary-dark"><i class="ti ti-layout-grid"></i> Our Services</a>
@@ -47,12 +47,12 @@ include 'header.php';
             <line class="nsvg-line" x1="124" y1="238" x2="70"  y2="276"/>
             <line class="nsvg-line" x1="127" y1="157" x2="70"  y2="118"/>
             <!-- signal dots travelling earth → satellite -->
-            <circle class="sig-dot" r="3" fill="#34d399"><animateMotion dur="3s" repeatCount="indefinite" path="M200,115 L200,71"/></circle>
-            <circle class="sig-dot" r="3" fill="#60a5fa"><animateMotion dur="3s" repeatCount="indefinite" begin="0.5s" path="M271,153 L322,118"/></circle>
-            <circle class="sig-dot" r="3" fill="#34d399"><animateMotion dur="3s" repeatCount="indefinite" begin="1s"   path="M274,241 L322,276"/></circle>
-            <circle class="sig-dot" r="3" fill="#60a5fa"><animateMotion dur="3s" repeatCount="indefinite" begin="1.5s" path="M200,285 L200,343"/></circle>
-            <circle class="sig-dot" r="3" fill="#34d399"><animateMotion dur="3s" repeatCount="indefinite" begin="2s"   path="M124,238 L70,276"/></circle>
-            <circle class="sig-dot" r="3" fill="#60a5fa"><animateMotion dur="3s" repeatCount="indefinite" begin="2.5s" path="M127,157 L70,118"/></circle>
+            <circle class="sig-dot" r="3" fill="#2eb872"><animateMotion dur="3s" repeatCount="indefinite" path="M200,115 L200,71"/></circle>
+            <circle class="sig-dot" r="3" fill="#1a3c6e"><animateMotion dur="3s" repeatCount="indefinite" begin="0.5s" path="M271,153 L322,118"/></circle>
+            <circle class="sig-dot" r="3" fill="#2eb872"><animateMotion dur="3s" repeatCount="indefinite" begin="1s"   path="M274,241 L322,276"/></circle>
+            <circle class="sig-dot" r="3" fill="#1a3c6e"><animateMotion dur="3s" repeatCount="indefinite" begin="1.5s" path="M200,285 L200,343"/></circle>
+            <circle class="sig-dot" r="3" fill="#2eb872"><animateMotion dur="3s" repeatCount="indefinite" begin="2s"   path="M124,238 L70,276"/></circle>
+            <circle class="sig-dot" r="3" fill="#1a3c6e"><animateMotion dur="3s" repeatCount="indefinite" begin="2.5s" path="M127,157 L70,118"/></circle>
           </svg>
           <!-- Earth Globe (Three.js WebGL) -->
           <canvas id="earthCanvas" class="earth-canvas-3d"></canvas>
@@ -108,7 +108,7 @@ include 'header.php';
       particles[i].move();
       ctx.beginPath();
       ctx.arc(particles[i].x, particles[i].y, particles[i].r, 0, Math.PI*2);
-      ctx.fillStyle = 'rgba(96,165,250,.7)';
+      ctx.fillStyle = 'rgba(26,60,110,.25)';
       ctx.fill();
       for(var j=i+1;j<particles.length;j++){
         var dx = particles[i].x - particles[j].x;
@@ -118,8 +118,8 @@ include 'header.php';
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = 'rgba(96,165,250,'+ ((1-d/140)*.3) +')';
-          ctx.lineWidth = .8;
+          ctx.strokeStyle = 'rgba(26,60,110,'+ ((1-d/140)*.12) +')';
+          ctx.lineWidth = .7;
           ctx.stroke();
         }
       }
@@ -152,12 +152,13 @@ include 'header.php';
   var loader = new THREE.TextureLoader();
   var BASE = 'https://raw.githubusercontent.com/mrdoob/three.js/r160/examples/textures/planets/';
 
-  /* Earth */
+  /* Earth — green water + greenery tint */
   var earthMat = new THREE.MeshPhongMaterial({
     map:         loader.load(BASE + 'earth_atmos_2048.jpg'),
+    color:       new THREE.Color(0.38, 1.0, 0.42), /* multiplies texture → turns ocean green, land vivid green */
     specularMap: loader.load(BASE + 'earth_specular_2048.jpg'),
-    specular:    new THREE.Color(0x444444),
-    shininess:   18,
+    specular:    new THREE.Color(0x1a4a1a),
+    shininess:   14,
     bumpMap:     loader.load(BASE + 'earth_normal_2048.jpg'),
     bumpScale:   0.05
   });
@@ -172,16 +173,16 @@ include 'header.php';
   var clouds = new THREE.Mesh(new THREE.SphereGeometry(1.022, 64, 64), cloudMat);
   scene.add(clouds);
 
-  /* Atmospheric haze (outer glow ring) */
+  /* Atmospheric haze — green glow ring */
   var atmMat = new THREE.MeshPhongMaterial({
-    color: 0x4fa8e8, transparent: true, opacity: 0.15,
+    color: 0x2eb872, transparent: true, opacity: 0.18,
     side: THREE.BackSide, depthWrite: false
   });
   scene.add(new THREE.Mesh(new THREE.SphereGeometry(1.18, 64, 64), atmMat));
 
-  /* Inner atmosphere rim */
+  /* Inner atmosphere rim — green */
   var rimMat = new THREE.MeshPhongMaterial({
-    color: 0x2563eb, transparent: true, opacity: 0.08,
+    color: 0x22c55e, transparent: true, opacity: 0.07,
     side: THREE.FrontSide, depthWrite: false
   });
   scene.add(new THREE.Mesh(new THREE.SphereGeometry(1.06, 64, 64), rimMat));
@@ -190,7 +191,7 @@ include 'header.php';
   var sun = new THREE.DirectionalLight(0xffffff, 1.4);
   sun.position.set(5, 3, 5);
   scene.add(sun);
-  scene.add(new THREE.AmbientLight(0x1a2a4a, 1.0));
+  scene.add(new THREE.AmbientLight(0x0a2a12, 1.0));
 
   /* Stars */
   var sv = [];
@@ -202,7 +203,7 @@ include 'header.php';
   }
   var sg = new THREE.BufferGeometry();
   sg.setAttribute('position', new THREE.Float32BufferAttribute(sv, 3));
-  scene.add(new THREE.Points(sg, new THREE.PointsMaterial({ color: 0xffffff, size: 0.045, transparent: true, opacity: 0.85 })));
+  scene.add(new THREE.Points(sg, new THREE.PointsMaterial({ color: 0x1a3c6e, size: 0.03, transparent: true, opacity: 0.35 })));
 
   function animate(){
     requestAnimationFrame(animate);
