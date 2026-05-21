@@ -7,7 +7,6 @@ include 'header.php';
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="home">
-  <canvas class="hero-canvas" id="bgParticles"></canvas>
   <div class="hero-glow g1"></div>
   <div class="hero-glow g2"></div>
   <div class="container hero-container">
@@ -15,9 +14,6 @@ include 'header.php';
 
       <!-- LEFT: Content -->
       <div class="hero-content">
-        <div class="hero-badge-pill">
-          <i class="ti ti-shield-check"></i> ISO 9001:2015 Certified &middot; 10+ Years
-        </div>
         <h1>Your Trusted <span class="highlight">IT System Integration</span> Partner</h1>
         <p class="lead">With <strong>10+ years of deep domain expertise</strong>, Tech Evangelist is India's trusted IT System Integrator — delivering enterprise-grade infrastructure, surveillance, smart education &amp; managed services to clients nationwide.<br><span class="lead-sub">Powered further by <a href="https://canexxa.com" target="_blank" rel="noopener" class="lead-link"><strong>Canexxa Solutions</strong></a> — our in-house software division — bringing custom applications &amp; digital products under one roof.</span></p>
         <div class="hero-ctas">
@@ -62,7 +58,7 @@ include 'header.php';
           <div class="net-node nn-3"><div class="nn-icon"><i class="ti ti-school"></i></div><div class="nn-lbl">Smart Class</div></div>
           <div class="net-node nn-4"><div class="nn-icon"><i class="ti ti-books"></i></div><div class="nn-lbl">E-Books</div></div>
           <div class="net-node nn-5"><div class="nn-icon"><i class="ti ti-printer"></i></div><div class="nn-lbl">Printing</div></div>
-          <div class="net-node nn-6"><div class="nn-icon"><i class="ti ti-topology-ring"></i></div><div class="nn-lbl">Integration</div></div>
+          <div class="net-node nn-6"><div class="nn-icon"><i class="ti ti-topology-ring"></i></div><div class="nn-lbl">IT Integration</div></div>
         </div>
       </div>
 
@@ -70,67 +66,6 @@ include 'header.php';
   </div>
 </section>
 
-<script>
-(function(){
-  var canvas = document.getElementById('bgParticles');
-  if(!canvas) return;
-  var ctx = canvas.getContext('2d');
-  var particles = [];
-
-  function resize(){
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  }
-
-  function Dot(){
-    this.x  = Math.random() * canvas.width;
-    this.y  = Math.random() * canvas.height;
-    this.vx = (Math.random() - .5) * .45;
-    this.vy = (Math.random() - .5) * .45;
-    this.r  = Math.random() * 1.8 + .8;
-  }
-  Dot.prototype.move = function(){
-    this.x += this.vx; this.y += this.vy;
-    if(this.x < 0 || this.x > canvas.width)  this.vx *= -1;
-    if(this.y < 0 || this.y > canvas.height) this.vy *= -1;
-  };
-
-  function init(){
-    resize();
-    var n = Math.min(Math.floor(canvas.width * canvas.height / 7000), 90);
-    particles = [];
-    for(var i=0;i<n;i++) particles.push(new Dot());
-  }
-
-  function loop(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    for(var i=0;i<particles.length;i++){
-      particles[i].move();
-      ctx.beginPath();
-      ctx.arc(particles[i].x, particles[i].y, particles[i].r, 0, Math.PI*2);
-      ctx.fillStyle = 'rgba(26,60,110,.25)';
-      ctx.fill();
-      for(var j=i+1;j<particles.length;j++){
-        var dx = particles[i].x - particles[j].x;
-        var dy = particles[i].y - particles[j].y;
-        var d  = Math.sqrt(dx*dx + dy*dy);
-        if(d < 140){
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = 'rgba(26,60,110,'+ ((1-d/140)*.12) +')';
-          ctx.lineWidth = .7;
-          ctx.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(loop);
-  }
-
-  window.addEventListener('resize', init);
-  init(); loop();
-})();
-</script>
 
 <!-- Three.js WebGL Earth -->
 <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
@@ -222,33 +157,29 @@ include 'header.php';
   </div>
   <div class="marquee-wrapper">
     <div class="marquee-track">
-      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/Canon-icon.jpg"      alt="Canon"      /></div>
-      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/acer-icon.jpg"       alt="Acer"       /></div>
-      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/benq-icon.png"       alt="BenQ"       /></div>
-      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/dell-icon.jpg"       alt="Dell"       /></div>
-      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/educomp-icon.png"    alt="Educomp"    /></div>
-      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/hcl-icon.png"        alt="HCL"        /></div>
-      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/hp-icon.jpg"         alt="HP"         /></div>
-      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/ibm-icon.png"        alt="IBM"        /></div>
-      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/intel-logo.png"      alt="Intel"      /></div>
-      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/intex-icon.jpg"      alt="Intex"      /></div>
-      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/kaspersky-icon.jpg"  alt="Kaspersky"  /></div>
-      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/lenevo-icon.jpg"     alt="Lenovo"     /></div>
-      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/sony-icon.jpg"       alt="Sony"       /></div>
+      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/cisco.jpg"       alt="Cisco"      /></div>
+      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/hp.jpg"          alt="HP"         /></div>
+      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/lenovo.jpg"      alt="Lenovo"     /></div>
+      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/acer.jpg"        alt="Acer"       /></div>
+      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/dell.png"        alt="Dell"       /></div>
+      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/dlink.png"       alt="D-Link"     /></div>
+      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/microsoft.png"   alt="Microsoft"  /></div>
+      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/redhat.jpg"      alt="Red Hat"    /></div>
+      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/tplink.png"      alt="TP-Link"    /></div>
+      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/zebra.png"       alt="Zebra"      /></div>
+      <div class="marquee-item"><img src="<?= $basePath ?>asset/partner/hashicorp.png"   alt="HashiCorp"  /></div>
       <!-- duplicate set for seamless infinite loop -->
-      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/Canon-icon.jpg"      alt="" /></div>
-      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/acer-icon.jpg"       alt="" /></div>
-      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/benq-icon.png"       alt="" /></div>
-      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/dell-icon.jpg"       alt="" /></div>
-      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/educomp-icon.png"    alt="" /></div>
-      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/hcl-icon.png"        alt="" /></div>
-      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/hp-icon.jpg"         alt="" /></div>
-      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/ibm-icon.png"        alt="" /></div>
-      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/intel-logo.png"      alt="" /></div>
-      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/intex-icon.jpg"      alt="" /></div>
-      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/kaspersky-icon.jpg"  alt="" /></div>
-      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/lenevo-icon.jpg"     alt="" /></div>
-      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/sony-icon.jpg"       alt="" /></div>
+      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/cisco.jpg"       alt="" /></div>
+      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/hp.jpg"          alt="" /></div>
+      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/lenovo.jpg"      alt="" /></div>
+      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/acer.jpg"        alt="" /></div>
+      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/dell.png"        alt="" /></div>
+      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/dlink.png"       alt="" /></div>
+      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/microsoft.png"   alt="" /></div>
+      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/redhat.jpg"      alt="" /></div>
+      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/tplink.png"      alt="" /></div>
+      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/zebra.png"       alt="" /></div>
+      <div class="marquee-item" aria-hidden="true"><img src="<?= $basePath ?>asset/partner/hashicorp.png"   alt="" /></div>
     </div>
   </div>
 </div>

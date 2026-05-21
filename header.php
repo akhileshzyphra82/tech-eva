@@ -25,48 +25,57 @@ $basePath = $basePath ?? '';
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="<?= $basePath ?>index#home" class="brand">
-      <img src="<?= $basePath ?>asset/Logo.png" alt="Tech Evangelist Private Limited" class="brand-logo-img">
+      <img src="<?= $basePath ?>asset/Logo.jpg" alt="Tech Evangelist Private Limited" class="brand-logo-img">
     </a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="<?= $basePath ?>index#home">Home</a>
-      <a href="<?= $basePath ?>index#partners">Partner</a>
-      <div class="dropdown">
-        <a href="<?= $basePath ?>index#about" class="dropdown-toggle">
-          Company <i class="ti ti-chevron-down"></i>
-        </a>
-        <div class="dropdown-menu">
-          <a href="<?= $basePath ?>index#who-we-are">Who We Are</a>
-          <a href="<?= $basePath ?>index#services">What We Do</a>
-          <a href="<?= $basePath ?>index#sectors-we-serve">Sectors We Serve</a>
-          <a href="<?= $basePath ?>index#subsidiary">Subsidiary &middot; Software Division</a>
-          <a href="<?= $basePath ?>index#about">About Us</a>
-          <a href="<?= $basePath ?>index#vision">Direction / Vision</a>
-          <a href="<?= $basePath ?>index#why-techeva">Why TechEva</a>
-          <a href="<?= $basePath ?>index#certifications">Certifications</a>
+    <div class="nav-right">
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="<?= $basePath ?>index#home">Home</a>
+        <a href="<?= $basePath ?>index#partners">Partner</a>
+        <div class="dropdown">
+          <a href="<?= $basePath ?>index#about" class="dropdown-toggle">
+            Company <i class="ti ti-chevron-down"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="<?= $basePath ?>index#who-we-are">Who We Are</a>
+            <a href="<?= $basePath ?>index#services">What We Do</a>
+            <a href="<?= $basePath ?>index#sectors-we-serve">Sectors We Serve</a>
+            <a href="<?= $basePath ?>index#subsidiary">Subsidiary &middot; Software Division</a>
+            <a href="<?= $basePath ?>index#about">About Us</a>
+            <a href="<?= $basePath ?>index#vision">Direction / Vision</a>
+            <a href="<?= $basePath ?>index#why-techeva">Why TechEva</a>
+            <a href="<?= $basePath ?>index#certifications">Certifications</a>
+          </div>
         </div>
-      </div>
-      <div class="dropdown">
-        <a href="<?= $basePath ?>our-services" class="dropdown-toggle">
-          Services <i class="ti ti-chevron-down"></i>
-        </a>
-        <div class="dropdown-menu">
-          <a href="<?= $basePath ?>our-services#service-cctv">CCTV &amp; Surveillance</a>
-          <a href="<?= $basePath ?>our-services#service-infra">IT Infrastructure</a>
-          <a href="<?= $basePath ?>our-services#service-smart">Smart Classroom Solutions</a>
-          <a href="<?= $basePath ?>our-services#service-ebooks">Digital Content &amp; E-Books</a>
-          <a href="<?= $basePath ?>our-services#service-print">Printing &amp; Barcode Solutions</a>
-          <a href="<?= $basePath ?>our-services#service-integration">System Integration</a>
+        <div class="dropdown">
+          <a href="<?= $basePath ?>our-services" class="dropdown-toggle">
+            Services <i class="ti ti-chevron-down"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="<?= $basePath ?>our-services#service-cctv">CCTV &amp; Surveillance</a>
+            <a href="<?= $basePath ?>our-services#service-infra">IT Infrastructure</a>
+            <a href="<?= $basePath ?>our-services#service-smart">Smart Classroom Solutions</a>
+            <a href="<?= $basePath ?>our-services#service-ebooks">Digital Content &amp; E-Books</a>
+            <a href="<?= $basePath ?>our-services#service-print">Printing &amp; Barcode Solutions</a>
+            <a href="<?= $basePath ?>our-services#service-integration">System Integration</a>
+          </div>
         </div>
+        <a href="<?= $basePath ?>index#projects">Projects</a>
+        <a href="<?= $basePath ?>index#contact">Contact Us</a>
+        <a href="<?= $basePath ?>index#contact" class="nav-cta">Request Quote</a>
+        <a href="https://wa.me/919004386567?text=Hi%20Techeva%2C%20I%20am%20looking%20for%20the%20following%20service%3A%0A%E2%80%A2%20CCTV%20%26%20Surveillance%0A%E2%80%A2%20IT%20Infrastructure%0A%E2%80%A2%20Smart%20Classroom%20Solutions%0A%E2%80%A2%20Digital%20Content%20%26%20E-Books%0A%E2%80%A2%20Printing%20%26%20Barcode%20Solutions%0A%E2%80%A2%20System%20Integration%0A%E2%80%A2%20AMC%20%26%20Managed%20Services" class="nav-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+          <i class="ti ti-brand-whatsapp"></i>
+        </a>
       </div>
-      <a href="<?= $basePath ?>index#projects">Projects</a>
-      <a href="<?= $basePath ?>index#contact">Contact Us</a>
-      <a href="<?= $basePath ?>index#contact" class="nav-cta">Request Quote</a>
-      <a href="https://wa.me/919004386567?text=Hi%20Techeva%2C%20I%20am%20looking%20for%20the%20following%20service%3A%0A%E2%80%A2%20CCTV%20%26%20Surveillance%0A%E2%80%A2%20IT%20Infrastructure%0A%E2%80%A2%20Smart%20Classroom%20Solutions%0A%E2%80%A2%20Digital%20Content%20%26%20E-Books%0A%E2%80%A2%20Printing%20%26%20Barcode%20Solutions%0A%E2%80%A2%20System%20Integration%0A%E2%80%A2%20AMC%20%26%20Managed%20Services" class="nav-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-        <i class="ti ti-brand-whatsapp"></i>
-      </a>
+    </div>
+  </div>
+  <div class="nav-subbar">
+    <div class="nav-subbar-inner">
+      <div class="nav-iso-pill">
+        <i class="ti ti-shield-check"></i> ISO 9001:2015 Certified &middot; 10+ Years
+      </div>
     </div>
   </div>
 </nav>
