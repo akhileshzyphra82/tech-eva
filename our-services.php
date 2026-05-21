@@ -17,9 +17,10 @@ include 'header.php';
     <h1>Complete IT Solutions Portfolio</h1>
     <p class="lead">Six core service lines delivered with OEM-grade quality and lifecycle support.</p>
     <div class="page-hero-ctas">
-      <a href="#service-cctv" class="btn btn-primary"><i class="ti ti-shield-check"></i> CCTV &amp; Surveillance</a>
+
       <a href="#service-infra" class="btn btn-secondary"><i class="ti ti-server"></i> IT Infrastructure</a>
       <a href="#service-smart" class="btn btn-secondary"><i class="ti ti-school"></i> Smart Classroom</a>
+            <a href="#service-cctv" class="btn btn-primary"><i class="ti ti-shield-check"></i> CCTV &amp; Surveillance</a>
       <a href="<?= $basePath ?>index#contact" class="btn btn-ghost"><i class="ti ti-file-text"></i> Request a Quote</a>
     </div>
   </div>
