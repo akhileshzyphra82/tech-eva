@@ -14,13 +14,20 @@ include 'header.php';
 
       <!-- LEFT: Content -->
       <div class="hero-content">
+
         <h1>Your Trusted <span class="highlight">IT System Integration</span> Partner</h1>
+              <img src="<?= $basePath ?>asset/Logo-Bottom.jpg" alt="Tech Evangelist Private Limited" >   
+ <div class="nav-iso-pill">
+        <i class="ti ti-shield-check"></i> ISO 9001:2015 Certified &middot; 10+ Years
+      </div>
         <p class="lead">With <strong>10+ years of deep domain expertise</strong>, Tech Evangelist is India's trusted IT System Integrator — delivering enterprise-grade infrastructure, smart education, managed services &amp; surveillance to clients nationwide.<br><span class="lead-sub">Powered further by <a href="https://canexxa.com" target="_blank" rel="noopener" class="lead-link"><strong>Canexxa Solutions</strong></a> — our in-house software division — bringing custom applications &amp; digital products under one roof.</span></p>
         <div class="hero-ctas">
           <a href="#contact" class="btn btn-primary"><i class="ti ti-file-text"></i> Request a Quote</a>
           <a href="our-services" class="btn btn-secondary-dark"><i class="ti ti-layout-grid"></i> Our Services</a>
           <a href="#contact" class="btn btn-ghost-dark"><i class="ti ti-calendar"></i> Book a Demo</a>
+         
         </div>
+          
         <div class="hero-trust">
           <i class="ti ti-circle-check-filled"></i> T2 Partner with Cisco, Lenovo, HP &amp; more
         </div>

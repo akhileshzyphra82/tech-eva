@@ -25,7 +25,7 @@ $basePath = $basePath ?? '';
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="<?= $basePath ?>index#home" class="brand">
-      <img src="<?= $basePath ?>asset/Logo.jpg" alt="Tech Evangelist Private Limited" class="brand-logo-img">
+      <img src="<?= $basePath ?>asset/Logo-Top.jpg" alt="Tech Evangelist Private Limited" class="brand-logo-img">
     </a>
     <div class="nav-right">
       <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -71,11 +71,11 @@ $basePath = $basePath ?? '';
       </div>
     </div>
   </div>
-  <div class="nav-subbar">
+  <!-- <div class="nav-subbar">
     <div class="nav-subbar-inner">
       <div class="nav-iso-pill">
         <i class="ti ti-shield-check"></i> ISO 9001:2015 Certified &middot; 10+ Years
       </div>
     </div>
-  </div>
+  </div> -->
 </nav>
